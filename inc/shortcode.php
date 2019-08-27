@@ -13,7 +13,8 @@ function wcd_slider_shortcode( $atts ) {
 			'nav' => 'dots',
 			'fade' => 'true',
 			'infinite' => 'true',
-			'speed' => '300',
+            'speed' => '300',
+            'vertical' => 'center'
 		),
 		$atts
     );
@@ -22,7 +23,12 @@ function wcd_slider_shortcode( $atts ) {
     $fade = $atts['fade'] ? $atts['fade']: 'fade';
     $speed = $atts['speed'] ? $atts['speed'] : '300';
     $infinite = $atts['infinite'] ? $atts['infinite'] : 'true';
-    
+    $vertical = $atts['vertical'] ? $atts['vertical'] : 'center';
+    $wcd_gp_settings = wp_parse_args(
+        get_option( 'generate_settings', array() ),
+        generate_get_defaults()
+    );
+    $grid = $wcd_gp_settings['container_width'] . 'px';
     $slider = '';
 
     $args = array(
@@ -32,13 +38,13 @@ function wcd_slider_shortcode( $atts ) {
     $query = new WP_Query( $args );
 
     if ( $query->have_posts() ) {
-        $slider .= '<div class="wcd-hero-slider ' . $nav . '" data-nav="' . $nav . '" data-fade="' . $fade . '" data-infinite="' . $infinite . '" data-speed="' . $speed . '">';
+        $slider .= '<div class="wcd-hero-slider ' . $nav . ' ' . $vertical . '" data-nav="' . $nav . '" data-fade="' . $fade . '" data-infinite="' . $infinite . '" data-speed="' . $speed . '">';
         while ( $query->have_posts() ) {
             $query->the_post();
             
             $background = get_the_post_thumbnail_url( get_the_ID(), 'full');
             $slider .= '<div class="slide" style="background-image: url(' . $background . '); background-size: cover; background-position: center; background-repeat: no-repeat;">';
-                $slider .= '<div class="grid-container">';
+                $slider .= '<div class="grid-container" style="max-width: ' . $grid . ';">';
                 $slider .= '<h2 class="slide-title">';
                 $slider .= get_the_title();
                 $slider .= '</h2>';
