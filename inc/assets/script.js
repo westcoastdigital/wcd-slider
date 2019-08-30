@@ -1,11 +1,11 @@
 ! function($) {
 	$(function() {
+        
 		$(".wcd-hero-slider").each(function() {
 			var nav = $(this).data("nav"),
 				slideFade = $(this).data("fade"),
 				slideSpeed = $(this).data("speed"),
                 slideInfinite = $(this).data("infinite");
-                height = $(this).parent().parent().outerHeight();
                 
             if ( nav == "arrows") {
                 var slideArrows = true;
@@ -33,7 +33,7 @@
                 'width' : '100%',
                 'max-width' : '100vw'
             });
-            $(this).find('.not-full').css('height', height);
+
             $(this).show();
 
 		});

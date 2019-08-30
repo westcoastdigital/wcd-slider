@@ -2,8 +2,8 @@
 /*
 Plugin Name: WCD Hero Slider
 Plugin URI: https://github.com/WestCoastDigital/wcd-slider
-Description: Add a simple slider to your site using the following shortcode [slider fade="true" infinite="true" speed="300" nav="dots" vertical="center"] (this example shows the defaults, and if using defaults you do not need to use the attribute). Options for nav are dots, arrows or numbers. Speed is in m/s and the others are either true or false.
-Version: 0.5.0
+Description: Add a simple slider to your site using the following shortcode [slider fade="true" infinite="true" speed="300" nav="dots"] (this example shows the defaults, and if using defaults you do not need to use the attribute). Options for nav are dots, arrows or numbers. Speed is in m/s and the others are either true or false.
+Version: 0.6.0
 Author: West Coast Digital
 Author URI: https://westcoastdigital.com.au
 Text Domain: wcd
