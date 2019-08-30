@@ -20,11 +20,16 @@ function wcd_slider_shortcode( $atts ) {
     );
     $grid = $wcd_gp_settings['container_width'] . 'px';
 
-    $wcd_gp_nav_settings = wp_parse_args(
-        get_option( 'generate_menu_plus_settings', array() ),
-        generate_menu_plus_get_defaults()
-    );
-    $breakpoint = $wcd_gp_nav_settings['mobile_menu_breakpoint'] . 'px';
+    if( function_exists( 'generate_menu_plus_init' ) ) {
+        $wcd_gp_nav_settings = wp_parse_args(
+            get_option( 'generate_menu_plus_settings', array() ),
+            generate_menu_plus_get_defaults()
+        );
+        $gp_breakpoint = $wcd_gp_nav_settings['mobile_menu_breakpoint'] ? $wcd_gp_nav_settings['mobile_menu_breakpoint'] : '768';
+        $breakpoint = $gp_breakpoint . 'px';
+    } else {
+        $breakpoint = '768px';
+    }
 
     /// Desktop Padding
     $padding_top = $options['padding_top'];

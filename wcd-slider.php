@@ -14,18 +14,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'PLUGIN_ROOT_DIR', plugin_dir_path( __FILE__ ) );
+if( !function_exists( 'gp_premium_active') ) {
+function gp_premium_active()
+	{
+		if (defined('GP_PREMIUM_VERSION') && post_type_exists( 'gp_elements' )) {
+			return true;
+		}
+	}
+}
 
-$wcd_includes = array(
-	'cpt.php',
-	'shortcode.php',
-	'enqueue.php',
-);
+if ( !gp_premium_active() ) {
 
-foreach ( $wcd_includes as $file ) {
-	$filepath = PLUGIN_ROOT_DIR . 'inc/' . $file;
-	if ( ! $filepath ) {
-		trigger_error( sprintf( 'Error locating /inc%s for inclusion', $file ), E_USER_ERROR );
-    }
-    include( $filepath );
+	define( 'PLUGIN_ROOT_DIR', plugin_dir_path( __FILE__ ) );
+
+	$wcd_includes = array(
+		'cpt.php',
+		'shortcode.php',
+		'enqueue.php',
+	);
+
+	foreach ( $wcd_includes as $file ) {
+		$filepath = PLUGIN_ROOT_DIR . 'inc/' . $file;
+		if ( ! $filepath ) {
+			trigger_error( sprintf( 'Error locating /inc%s for inclusion', $file ), E_USER_ERROR );
+		}
+		include( $filepath );
+	}
+
 }
