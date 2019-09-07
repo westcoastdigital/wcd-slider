@@ -17,9 +17,9 @@
             }
 
             if( slideAutoplay == "true" ) {
-                var autoplay = true;
+                var sliderAutoplay = 'true';
             } else {
-                var autoplay = false;
+                var sliderAutoplay = 'false';
             }
 
 
@@ -29,7 +29,7 @@
 				arrows: slideArrows,
 				slidesToShow: 1,
                 fade: slideFade,
-                autoplay: autoplay,
+                autoplay: sliderAutoplay,
 				speed: slideSpeed
             });
             
