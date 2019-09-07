@@ -5,6 +5,7 @@
 			var nav = $(this).data("nav"),
 				slideFade = $(this).data("fade"),
 				slideSpeed = $(this).data("speed"),
+				slideAutoplay = $(this).data("autoplay"),
                 slideInfinite = $(this).data("infinite");
                 
             if ( nav == "arrows") {
@@ -15,13 +16,20 @@
                 var slideDots = true;
             }
 
+            if( slideAutoplay == "true" ) {
+                var autoplay = true;
+            } else {
+                var autoplay = false;
+            }
+
 
 			$(this).slick({
 				dots: slideDots,
 				infinite: slideInfinite,
 				arrows: slideArrows,
 				slidesToShow: 1,
-				fade: slideFade,
+                fade: slideFade,
+                autoplay: autoplay,
 				speed: slideSpeed
             });
             

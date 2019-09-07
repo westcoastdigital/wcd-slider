@@ -159,6 +159,7 @@ function wcd_slider_shortcode( $atts ) {
 			'fade' => 'true',
 			'infinite' => 'true',
             'speed' => '300',
+            'autoplay' => 'false',
 		),
 		$atts
     );
@@ -167,6 +168,7 @@ function wcd_slider_shortcode( $atts ) {
     $fade = $atts['fade'] ? $atts['fade']: 'fade';
     $speed = $atts['speed'] ? $atts['speed'] : '300';
     $infinite = $atts['infinite'] ? $atts['infinite'] : 'true';
+    $autoplay = $atts['autoplay'] ? $atts['autoplay'] : 'false';
 
     $args = array(
         'post_type'              => array( 'slider' ),
@@ -175,7 +177,7 @@ function wcd_slider_shortcode( $atts ) {
     $query = new WP_Query( $args );
 
     if ( $query->have_posts() ) {
-        $slider .= '<div id="wcd-' . $token . '" class="wcd-hero-slider ' . $nav . ' ' . $vertical . '" data-nav="' . $nav . '" data-fade="' . $fade . '" data-infinite="' . $infinite . '" data-speed="' . $speed . '">';
+        $slider .= '<div id="wcd-' . $token . '" class="wcd-hero-slider ' . $nav . ' ' . $vertical . '" data-nav="' . $nav . '" data-fade="' . $fade . '" data-infinite="' . $infinite . '" data-speed="' . $speed . '" data-autoplay="' . $autplay . '">';
         while ( $query->have_posts() ) {
             $query->the_post();
             
