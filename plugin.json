@@ -1,0 +1,8 @@
+{
+    "name" : "WCD Hero Slider",
+    "version" : "0.7.0",
+    "download_url" : "https://github.com/WestCoastDigital/wcd-slider/archive/master.zip",
+    "sections" : {
+        "description" : "Add a simple slider to your site using the following shortcode [slider fade="true" infinite="true" speed="300" nav="dots" autoplay="false"] (this example shows the defaults, and if using defaults you do not need to use the attribute). Options for nav are dots, arrows or numbers. Speed is in m/s and the others are either true or false."
+    }
+}

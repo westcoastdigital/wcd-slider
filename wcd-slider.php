@@ -23,6 +23,8 @@ function gp_premium_active()
 	}
 }
 
+
+
 if ( !gp_premium_active() ) {
 
 	define( 'PLUGIN_ROOT_DIR', plugin_dir_path( __FILE__ ) );
@@ -31,6 +33,7 @@ if ( !gp_premium_active() ) {
 		'cpt.php',
 		'shortcode.php',
 		'enqueue.php',
+		'plugin-update-checker/plugin-update-checker.php',
 	);
 
 	foreach ( $wcd_includes as $file ) {
@@ -40,5 +43,12 @@ if ( !gp_premium_active() ) {
 		}
 		include( $filepath );
 	}
+
+	$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+		'https://github.com/WestCoastDigital/wcd-slider',
+		__FILE__,
+		'wcd-slider'
+	);
+	$myUpdateChecker->setAuthentication('67e20c176d8404a9701b6eee5995ce098192c1e4');
 
 }
