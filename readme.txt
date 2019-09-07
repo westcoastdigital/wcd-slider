@@ -15,6 +15,13 @@ Add a simple slider to your site using the following shortcode [slider fade="tru
  
 Add a simple slider to your site using the following shortcode [slider fade="true" infinite="true" speed="300" nav="dots" autoplay="false"] (this example shows the defaults, and if using defaults you do not need to use the attribute). Options for nav are dots, arrows or numbers. Speed is in m/s and the others are either true or false.
 
+= Shortcode Attributes =
+fade = "true" (allows you to fade in/out the slide changes or have them slide right to left if false)
+infinite = "true" (allows you to have the slide loop through all slides, set to false and the user will have to scroll previous at end of slides, or next at start)
+speed = "300" (this is the slide speed in m/s so 1000 is 1 second)
+nav="dots" (this is the slide navigation, you can choose between dots, arrows or numbers)
+autoplay="false" (this allows the slides to automativally slide without needing interaction)
+
 == Changelog ==
  
 = 0.1 =
@@ -35,4 +42,4 @@ Add a simple slider to your site using the following shortcode [slider fade="tru
 == Upgrade Notice ==
  
 = 0.7 =
-This version also adds in auto update support (to be tested)
+This version adds autoplay support
