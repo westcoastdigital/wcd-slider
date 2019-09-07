@@ -9,7 +9,7 @@ Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
-Add a simple slider to your site using the following shortcode [slider fade="true" infinite="true" speed="300" nav="dots" autoplay="false"] (this example shows the defaults, and if using defaults you do not need to use the attribute). Options for nav are dots, arrows or numbers. Speed is in m/s and the others are either true or false.
+Add a simple slider to your site using the following shortcode [slider fade="true" infinite="true" transition="300" speed="3000" nav="dots" autoplay="false"] (this example shows the defaults, and if using defaults you do not need to use the attribute). Options for nav are dots, arrows or numbers. Speed and Transition are in m/s and the others are either true or false.
 
 == Description ==
  
@@ -18,7 +18,8 @@ Add a simple slider to your site using the following shortcode [slider fade="tru
 = Shortcode Attributes =
 fade = "true" (allows you to fade in/out the slide changes or have them slide right to left if false)
 infinite = "true" (allows you to have the slide loop through all slides, set to false and the user will have to scroll previous at end of slides, or next at start)
-speed = "300" (this is the slide speed in m/s so 1000 is 1 second)
+transition = "300" (this is the slide transition speed in m/s so 1000 is 1 second)
+speed = "3000" (this is the slide autoplay speed in m/s so 3000 is 3 seconds)
 nav="dots" (this is the slide navigation, you can choose between dots, arrows or numbers)
 autoplay="false" (this allows the slides to automativally slide without needing interaction)
 
@@ -39,7 +40,15 @@ autoplay="false" (this allows the slides to automativally slide without needing 
 = 0.7 =
 * Added autoplay support.
  
+= 0.8 =
+* Fixed spelling error bug.
+* Changed Speed to slide speed
+* Added Transition to set the fade/animation speed
+ 
 == Upgrade Notice ==
+ 
+= 0.8 =
+This version adds a bug fix and correctly applies speed and transition effects
  
 = 0.7 =
 This version adds autoplay support

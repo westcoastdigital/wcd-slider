@@ -4,6 +4,7 @@
 		$(".wcd-hero-slider").each(function() {
 			var nav = $(this).data("nav"),
 				slideFade = $(this).data("fade"),
+				transitionSpeed = $(this).data("transition"),
 				slideSpeed = $(this).data("speed"),
 				slideAutoplay = $(this).data("autoplay"),
                 slideInfinite = $(this).data("infinite");
@@ -30,7 +31,8 @@
 				slidesToShow: 1,
                 fade: slideFade,
                 autoplay: sliderAutoplay,
-				speed: slideSpeed
+                speed: transitionSpeed,
+                autoplaySpeed: slideSpeed
             });
             
             $(this).parent().parent().css({
