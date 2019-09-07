@@ -45,7 +45,7 @@ if ( !gp_premium_active() ) {
 	}
 
 	$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-		'https://github.com/WestCoastDigital/wcd-slider',
+		PLUGIN_ROOT_DIR . 'plugin.json',
 		__FILE__,
 		'wcd-slider'
 	);
