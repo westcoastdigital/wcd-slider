@@ -6,8 +6,8 @@ Requires at least: 5.1
 Tested up to: 5.2
 Requires PHP: 7.2
 Stable tag: 4.3
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
  
 Add a simple slider to your site using the following shortcode [slider fade="true" infinite="true" transition="300" speed="3000" nav="dots" autoplay="false"] (this example shows the defaults, and if using defaults you do not need to use the attribute). Options for nav are dots, arrows or numbers. Speed and Transition are in m/s and the others are either true or false.
 
@@ -52,3 +52,7 @@ This version adds a bug fix and correctly applies speed and transition effects
  
 = 0.7 =
 This version adds autoplay support
+
+== Contributors ==
+This plugin was commissioned and made possible thanks to [Venture Industries Online](https://ventureindustriesonline.com/) and developed by [West Coast Digital](https://westcoastdigital.com.au).
+The plugin makes use of [Slick by Ken Wheeler](http://kenwheeler.github.io/slick/) for the slider controls
